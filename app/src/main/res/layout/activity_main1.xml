@@ -152,17 +152,12 @@
         app:layout_constraintTop_toBottomOf="@+id/MM">
 
         <RadioButton
-<<<<<<< HEAD
-            android:id="@+id/radioButton4"
-=======
             android:id="@+id/radioButton"
->>>>>>> changed1
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="感情"
-            tools:layout_editor_absoluteX="16dp"
-<<<<<<< HEAD
-            tools:layout_editor_absoluteY="310dp" />
+            tools:layout_editor_absoluteX="66dp"
+            tools:layout_editor_absoluteY="318dp" />
 
         <RadioButton
             android:id="@+id/radioButton5"
@@ -179,25 +174,6 @@
             android:text="課業"
             tools:layout_editor_absoluteX="276dp"
             tools:layout_editor_absoluteY="310dp" />
-=======
-            tools:layout_editor_absoluteY="313dp" />
-
-        <RadioButton
-            android:id="@+id/radioButton3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="課業"
-            tools:layout_editor_absoluteX="272dp"
-            tools:layout_editor_absoluteY="313dp" />
-
-        <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="朋友"
-            tools:layout_editor_absoluteX="137dp"
-            tools:layout_editor_absoluteY="312dp" />
->>>>>>> changed1
     </RadioGroup>
 
 </android.support.constraint.ConstraintLayout>

@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Toast;
-
+import com.facebook.FacebookSdk;
 import java.util.Random;
 
 public class MainActivity1 extends AppCompatActivity {
@@ -36,23 +36,13 @@ public class MainActivity1 extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId)
                 {
-<<<<<<< HEAD
-                    case R.id.radioButton4:
+                    case R.id.radioButton:
                         se=1;
                         break;
                     case R.id.radioButton5:
                         se=2;
                         break;
                     case R.id.radioButton6:
-=======
-                    case R.id.radioButton:
-                        se=1;
-                        break;
-                    case R.id.radioButton2:
-                        se=2;
-                        break;
-                    case R.id.radioButton3:
->>>>>>> changed1
                         se=3;
                         break;
 
