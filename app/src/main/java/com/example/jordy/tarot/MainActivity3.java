@@ -1,13 +1,30 @@
 package com.example.jordy.tarot;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.facebook.AccessToken;
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.FacebookSdk;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
+import com.facebook.login.LoginResult;
+import com.facebook.login.widget.LoginButton;
+import com.facebook.share.model.ShareLinkContent;
+import com.facebook.share.model.SharePhoto;
+import com.facebook.share.model.SharePhotoContent;
+
+import org.json.JSONObject;
 
 public class MainActivity3 extends AppCompatActivity
 //implements View.OnClickListener{
@@ -818,7 +835,55 @@ public class MainActivity3 extends AppCompatActivity
         }
     }
 
-    public void gett (View v){
+    public class  MainActivity extends AppCompatActivity {
+        CallbackManager callbackManeger;
+        AccessToken accessToken;
+        @Override
+                protected void onCreate(Bundle savedInstanceState){
+            FacebookSdk.sdkInitialize(getApplicationContext());
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main3);
+            callbackManeger =CallbackManager.Factory.create();
+
+            final LoginButton loginButton=(LoginButton) findViewById(R.id.a);
+            loginButton.registerCallback(callbackManeger, new FacebookCallback<LoginResult>() {
+
+                @Override
+                public void  onSuccess(LoginResult loginResult){
+                    accessToken = loginResult.getAccessToken();
+                    GraphRequest request=GraphRequest.newMeRequest(accessToken,new GraphRequest.GraphJSONObjectCallback() {
+                        @Override
+                        public void onCompleted(JSONObject object, GraphResponse response){
+
+                        }
+                    });
+                    Bundle parameters = new Bundle();
+                    parameters.putString("fields","id.name,link");
+                    request.setParameters(parameters);
+                    request.executeAsync();
+                }
+
+                SharePhoto imv = new SharePhoto.Builder()
+
+                        .build();
+                SharePhotoContent imv2 = new SharePhotoContent.Builder()
+                        .addPhoto(imv)
+                        .build();
+                @Override
+                public void onCancel() {
+                    Log.d("FB","CANCEL");
+                }
+
+                @Override
+                public void onError(FacebookException exception) {
+                    Log.d("FB",exception.toString());
+                }
+
+        });
+
+        }
+    }
+        public void gett (View v){
         finish();
     }
 

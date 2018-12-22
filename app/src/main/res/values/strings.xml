@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">tarot</string>
     <string name="facebook_app_id">377684763000685</string>
+
+    <string name="about_link"><a href='https://www.facebook.com'>https://www.facebook.com</a></string>
+    <string name="about_email"><a href='t105360025@ntut.edu.tw'>admin@example.com</a></string>
 </resources>
