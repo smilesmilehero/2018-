@@ -10,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity3 extends AppCompatActivity
-//implements View.OnClickListener{
 {
 
     ImageView imv;
@@ -23,7 +22,6 @@ public class MainActivity3 extends AppCompatActivity
         setContentView(R.layout.activity_main3);
         imv=(ImageView)findViewById(R.id.imv);
         imv2=(ImageView)findViewById(R.id.imv2);
-        //imv.setOnClickListener(this);
         textres=(TextView)findViewById(R.id.textres);
         Button3 = (Button) findViewById(R.id.button3);
 
@@ -822,13 +820,7 @@ public class MainActivity3 extends AppCompatActivity
         finish();
     }
 
-    //@Override
-   // public void onClick(View v) {
-    /*    ViewGroup.LayoutParams lp = imv.getLayoutParams();
-        lp.width = ViewGroup.LayoutParams.MATCH_PARENT;
-        lp.height = ViewGroup.LayoutParams.MATCH_PARENT;
-        imv.setLayoutParams(lp);
-        */
+
         public void trh (View v){
         imv2.setVisibility(View.VISIBLE);
         Button3.setVisibility(View.GONE);
