@@ -25,14 +25,14 @@ public class MainActivity3 extends AppCompatActivity
         textres=(TextView)findViewById(R.id.textres);
         Button3 = (Button) findViewById(R.id.button3);
 
-        Intent it=getIntent();
+        Intent it=getIntent();                                                                        //將亂數值拿出來
         Bundle bundle=it.getExtras();
         int sum=bundle.getInt("SUM");
-        switch(sum)
+        switch(sum)                                                                                   //依照亂數的值去找尋相對的結果
         {
 
             case 1:
-                imv.setImageResource(R.drawable.tarot1);
+                imv.setImageResource(R.drawable.tarot1);                                                //顯示對應圖片及文字
                 imv2.setImageResource(R.drawable.tarot1);
                 textres.setText("現在的想法可以解決所有問題");
                 break;
@@ -817,15 +817,15 @@ public class MainActivity3 extends AppCompatActivity
     }
 
     public void gett (View v){
-        finish();
+        finish();                                                                                    //點擊回到第一個主頁面
     }
 
 
-        public void trh (View v){
+        public void trh (View v){                                                                    //點擊小圖顯示放大後圖片
         imv2.setVisibility(View.VISIBLE);
         Button3.setVisibility(View.GONE);
     }
-        public void trh2 (View v){
+        public void trh2 (View v){                                                                   //點擊大圖顯示先前圖片
         imv2.setVisibility(View.GONE);
         Button3.setVisibility(View.VISIBLE);
     }

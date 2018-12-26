@@ -8,17 +8,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import android.app.Activity;
-import android.media.AudioManager;
-import android.media.MediaPlayer;
 
 public class MainActivity2 extends AppCompatActivity {
 
-    MediaPlayer mPlayer;
 
     private TextView mTextView;
     private Button mButton;
-
     int sum;
 
     @Override
@@ -29,20 +24,20 @@ public class MainActivity2 extends AppCompatActivity {
         mTextView = (TextView) findViewById(R.id.textView1);
         mButton = (Button) findViewById(R.id.button1);
 
-        Intent it=getIntent();
+        Intent it=getIntent();                                                                       //將前一bundle值讀取出來
         Bundle bundle=it.getExtras();
         sum=bundle.getInt("SUM");
 
-         new CountDownTimer(10000, 1000) {
+         new CountDownTimer(10000, 1000) {                         //進入倒數畫面
 
-            @Override
+            @Override                                                                                //倒數完成時
             public void onFinish() {
                 mTextView.setText("結果出來囉~");
-                mButton.setVisibility(View.VISIBLE);
+                mButton.setVisibility(View.VISIBLE);                                                 //顯示按鈕
             }
 
             @Override
-            public void onTick(long millisUntilFinished) {
+            public void onTick(long millisUntilFinished) {                                           //倒數尚未結束
                 mTextView.setText("解牌中，請稍後..." + millisUntilFinished / 1000);
             }
 
@@ -52,14 +47,14 @@ public class MainActivity2 extends AppCompatActivity {
 
 
     public void get (View v){
-        Intent it = new Intent(this, MainActivity3.class);
+        Intent it = new Intent(this, MainActivity3.class);                          //將結果傳至下個主畫面
 
-        Bundle bundle=new Bundle();
+        Bundle bundle=new Bundle();                                                                  //將值打包
         bundle.putInt("SUM",sum);
         it.putExtras(bundle);
 
-        startActivityForResult(it, 100);
-        finish();
+        startActivityForResult(it, 100);                                               //進入下個主畫面
+        finish();                                                                                    //結束此頁面
     }
 
 }
